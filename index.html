@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css" />
+  <title>ToP | Push App</title>
+</head>
+
+<body>
+  <header>
+    <h3>logo.empresa</h3>
+    <nav>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Sobre nós</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#"><i class="bi bi-search"></i></a></li>
+        <li><a href="#"><i class="bi bi-bag-dash"></i></a></li>
+        <li><a href="#"><i class="bi bi-list"></i></a></li>
+      </ul>
+  </header>
+
+  <main>
+    <div>
+      <div>
+        <h2>Carrinho</h2>
+        <div class="row">
+          <div class="col">
+            <span>Produto</span>
+          </div>
+          <div class="col">
+            <span>Tamanho</span>
+          </div>
+        </div>
+        <hr>
+        <hr>
+      </div>
+
+      <div id="total-container">
+        <div>
+          <h4>
+            <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
+            Continuar comprando
+          </h4>
+        </div>
+
+        <div>
+          <div>
+            <span>Subtotal</span>
+            <span><strong>€269.97</strong></span>
+          </div>
+          <br>
+          <div>
+            <span>Frete</span>
+            <span><strong>Grátis</strong></span>
+          </div>
+          <hr>
+          <div>
+            <span><strong>Total</strong></span>
+            <span><strong style="font-size: 20px;">€269.97</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="payment-container">
+      <h2>Pagamento</h2>
+      <span>Pagar com:</span>
+      <div>
+        <button class="payment">
+          <strong>PayPal</strong>
+        </button>
+        <br>
+        <button class="payment">
+          <strong>Visa/MasterCard</strong>
+        </button>
+        <br>
+        <button class="payment">
+          <strong>Tap on Phone</strong>
+        </button>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+header,
+nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0 100px;
+  margin-bottom: 40px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+nav > ul {
+  padding: 0;
+}
+
+nav > ul > li > a {
+  margin-left: 100px;
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  margin-bottom: 25px;
+}
+
+#total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.payment {
+  border: none;
+  color: #fff;
+  background-color: #4d49f5;
+  opacity: 0.2;
+  border-radius: 8px;
+  padding: 25px 100px;
+  width: 100%;
+  margin: 7.5px 0;
+}
+
+.payment:hover,
+.payment.active {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#payment-container {
+  background-color: #f5f5f5;
+  border-radius: 11px;
+  padding: 30px;
+}
+
+label {
+  margin-right: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
