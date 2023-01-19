@@ -8,23 +8,29 @@ paymentButtons.forEach((button, index) => {
 
     button.classList.add("active");
 
-    if (index === 2 && !document.querySelector("#phone")) {
-      const form = document.createElement("form");
-      form.setAttribute("id", "form");
-      const label = document.createElement("label");
-      label.innerText = "Telemóvel: ";
-
-      const input = document.createElement("input");
-      input.setAttribute("id", "phone");
-      input.setAttribute("type", "number");
-
-      form.appendChild(label);
-      form.appendChild(input);
-      label.parentNode.style.textAlign = "center";
-
-      button.parentNode.appendChild(form);
-    } else if (index !== 2 && document.querySelector("#phone")) {
-      document.querySelector("#phone").parentNode.remove();
+    if (index === 2) {
+      document.querySelector("#phone").classList.add("active");
+    } else {
+      document.querySelector("#phone").classList.remove("active");
     }
   });
+});
+
+const comerciante = document.querySelector("#comerciante").innerHTML;
+const total = document.querySelector("#total").innerHTML;
+const phoneNumber = document.querySelector("#number");
+const submitButton = document.querySelector("#submit");
+submitButton.parentNode.style.display = "flex";
+submitButton.parentNode.style.justifyContent = "center";
+submitButton.addEventListener("click", () => {
+  if (phoneNumber.value.length !== 0) {
+    alert(
+      `Comerciante: ${comerciante}\nTelemóvel: ${
+        phoneNumber.value
+      }\nTotal: €${+total}`
+    );
+    phoneNumber.value = "";
+    paymentButtons[2].classList.remove("active");
+    document.querySelector("#phone").classList.remove("active");
+  }
 });

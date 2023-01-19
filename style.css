@@ -22,7 +22,8 @@ nav > ul > li > a {
 
 main {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 7.5%;
   padding: 0 100px;
   margin-bottom: 25px;
 }
@@ -61,4 +62,29 @@ label {
   margin-right: 10px;
   margin-top: 10px;
   font-weight: bold;
+}
+
+#phone {
+  display: none;
+  text-align: center;
+}
+
+#phone.active {
+  display: block;
+}
+
+#submit {
+  border: none;
+  background-color: #4d49f5;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+#submit:hover {
+  opacity: 1;
+  cursor: pointer;
 }

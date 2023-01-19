@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <h3>logo.empresa</h3>
+    <h3><strong>logo.empresa</strong></h3>
     <nav>
       <ul>
         <li><a href="#">Shop</a></li>
@@ -38,6 +38,12 @@
           <div class="col">
             <span>Tamanho</span>
           </div>
+          <div class="col">
+            <span>Quantidade</span>
+          </div>
+          <div class="col">
+            <span>Valor total</span>
+          </div>
         </div>
         <hr>
         <hr>
@@ -54,7 +60,7 @@
         <div>
           <div>
             <span>Subtotal</span>
-            <span><strong>€269.97</strong></span>
+            <span><strong>€ 269.97</strong></span>
           </div>
           <br>
           <div>
@@ -64,7 +70,10 @@
           <hr>
           <div>
             <span><strong>Total</strong></span>
-            <span><strong style="font-size: 20px;">€269.97</strong></span>
+            <span style="font-size: 20px; font-weight: bold;">
+              €
+              <span id="total" style="font-size: 20px; font-weight: bold;">269.97</span>
+            </span>
           </div>
         </div>
       </div>
@@ -72,6 +81,10 @@
 
     <div id="payment-container">
       <h2>Pagamento</h2>
+      <div>
+        <span>Comerciante: </span>
+        <span id="comerciante">Loja teste</span>
+      </div>
       <span>Pagar com:</span>
       <div>
         <button class="payment">
@@ -79,12 +92,19 @@
         </button>
         <br>
         <button class="payment">
-          <strong>Visa/MasterCard</strong>
+          <strong>VISA/MasterCard</strong>
         </button>
         <br>
         <button class="payment">
-          <strong>Tap on Phone</strong>
+          <strong>TooP</strong>
         </button>
+        <form id="phone">
+          <label for="number">Telemóvel</label>
+          <input type="number" name="number" id="number">
+        </form>
+      </div>
+      <div>
+        <button id="submit">Continuar</button>
       </div>
     </div>
   </main>
