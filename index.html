@@ -28,83 +28,138 @@
   </header>
 
   <main>
-    <div>
+    <section>
       <div>
-        <h2>Carrinho</h2>
-        <div class="row">
-          <div class="col">
-            <span>Produto</span>
-          </div>
-          <div class="col">
-            <span>Tamanho</span>
-          </div>
-          <div class="col">
-            <span>Quantidade</span>
-          </div>
-          <div class="col">
-            <span>Valor total</span>
-          </div>
-        </div>
-        <hr>
-        <hr>
-      </div>
-
-      <div id="total-container">
         <div>
-          <h4>
-            <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
-            Continuar comprando
-          </h4>
-        </div>
-
-        <div>
-          <div>
-            <span>Subtotal</span>
-            <span><strong>€ 269.97</strong></span>
-          </div>
-          <br>
-          <div>
-            <span>Frete</span>
-            <span><strong>Grátis</strong></span>
+          <h2><strong>Carrinho</strong></h2>
+          <div class="row">
+            <div class="col">
+              <span>Produto</span>
+            </div>
+            <div class="col">
+              <span>Tamanho</span>
+            </div>
+            <div class="col">
+              <span>Quantidade</span>
+            </div>
+            <div class="col">
+              <span>Valor</span>
+            </div>
           </div>
           <hr>
+          <div class="row">
+            <div class="col">
+              <strong>Produto 1</strong>
+            </div>
+            <div class="col">
+              <strong>M</strong>
+            </div>
+            <div class="col">
+              <strong>1</strong>
+            </div>
+            <div class="col">
+              <strong>€89.99</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <strong>Produto 2</strong>
+            </div>
+            <div class="col">
+              <strong>M</strong>
+            </div>
+            <div class="col">
+              <strong>1</strong>
+            </div>
+            <div class="col">
+              <strong>€79.99</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <strong>Produto 3</strong>
+            </div>
+            <div class="col">
+              <strong>S</strong>
+            </div>
+            <div class="col">
+              <strong>1</strong>
+            </div>
+            <div class="col">
+              <strong>€99.99</strong>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <div id="total-container">
           <div>
-            <span><strong>Total</strong></span>
-            <span style="font-size: 20px; font-weight: bold;">
-              €
-              <span id="total" style="font-size: 20px; font-weight: bold;">269.97</span>
-            </span>
+            <h5>
+              <strong>
+                <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
+                Continuar comprando
+              </strong>
+            </h5>
+          </div>
+
+          <div class="subtotal">
+            <div>
+              <span>Subtotal</span>
+              <span><strong>€ 269.97</strong></span>
+            </div>
+            <br>
+            <div>
+              <span>Frete</span>
+              <span><strong>Grátis</strong></span>
+            </div>
+            <hr>
+            <div>
+              <span><strong>Total</strong></span>
+              <span style="font-size: 20px; font-weight: bold;">
+                €
+                <span id="total">269.97</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div id="payment-container">
-      <h2>Pagamento</h2>
-      <div>
-        <span>Comerciante: </span>
-        <span id="comerciante">Loja teste</span>
+      <div id="payment-container">
+        <h2>Pagamento</h2>
+        <div>
+          <span>Comerciante: </span>
+          <span id="comerciante">Loja teste</span>
+        </div>
+        <span>Pagar com:</span>
+        <div>
+          <button class="payment">
+            <strong>PayPal</strong>
+          </button>
+          <br>
+          <button class="payment">
+            <strong>VISA/MasterCard</strong>
+          </button>
+          <br>
+          <button class="payment">
+            <strong>TooP</strong>
+          </button>
+        </div>
       </div>
-      <span>Pagar com:</span>
+    </section>
+
+    <div id="phone-container"></div>
+    <div id="phone">
       <div>
-        <button class="payment">
-          <strong>PayPal</strong>
-        </button>
-        <br>
-        <button class="payment">
-          <strong>VISA/MasterCard</strong>
-        </button>
-        <br>
-        <button class="payment">
-          <strong>TooP</strong>
-        </button>
-        <form id="phone">
-          <label for="number">Telemóvel</label>
-          <input type="number" name="number" id="number">
+        <form>
+          <h4><strong>Pagamento TooP</strong></h4>
+          <br>
+          <span>Insira seu número de telemóvel<br>para prosseguir com o pagamento na APP:</span>
+          <div>
+            <input id="country" type="text" placeholder="+351">
+            <input type="number" name="number" id="number">
+          </div>
+          <button type="button" id="enviar">E N V I A R</button>
         </form>
-      </div>
-      <div>
-        <button id="submit">Continuar</button>
       </div>
     </div>
   </main>

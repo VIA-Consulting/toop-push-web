@@ -20,10 +20,11 @@ nav > ul > li > a {
   color: #000;
 }
 
-main {
+section {
   display: flex;
   justify-content: center;
-  gap: 7.5%;
+  gap: 16.5%;
+  margin: 0 auto;
   padding: 0 100px;
   margin-bottom: 25px;
 }
@@ -58,33 +59,97 @@ main {
   padding: 30px;
 }
 
-label {
-  margin-right: 10px;
-  margin-top: 10px;
-  font-weight: bold;
+#country {
+  width: 15%;
+  margin-right: -10px;
+  margin-top: 20px;
+}
+
+#phone-container {
+  display: none;
+  background-color: #212121;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0.7;
 }
 
 #phone {
   display: none;
+}
+
+#phone > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 99;
+  position: absolute;
+  top: calc(100vh / 2 - 175px);
+  left: calc(100vw / 2 - 300px);
+}
+
+#phone form {
   text-align: center;
+  background-color: #fff;
+  padding: 75px 0;
+  opacity: 1;
+  border-radius: 22px;
+  box-shadow: 0px 10px 40px #0000006f;
+}
+
+#phone-container.active {
+  display: block;
 }
 
 #phone.active {
   display: block;
 }
 
-#submit {
+#enviar {
   border: none;
   background-color: #4d49f5;
-  font-weight: bold;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 80px;
   border-radius: 8px;
   margin-top: 20px;
   opacity: 0.8;
+  font-size: 12px;
+  font-weight: 200;
 }
 
-#submit:hover {
+#enviar:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.col {
+  padding-right: 75px;
+}
+
+.subtotal {
+  width: 25%;
+}
+
+.subtotal > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  border: 1px solid #d6d6d6;
+  padding: 5px 10px;
+  border-radius: 8px 0 0 8px;
+  font-size: 20px;
+}
+
+#number {
+  border-radius: 0 8px 8px 0;
+  color: #000;
+  font-weight: bold;
+  width: 50%;
 }
