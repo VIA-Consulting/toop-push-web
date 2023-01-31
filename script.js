@@ -44,3 +44,10 @@ phoneContainer.addEventListener("click", () => {
   document.querySelector("#phone-container").classList.remove("active");
   document.querySelector("#phone").classList.remove("active");
 });
+
+//Menu Mobile 
+const menu = document.querySelector("#menu");
+menu.addEventListener("click", () => {
+  document.querySelector("#nav-ul").classList.toggle("show");
+  
+});
