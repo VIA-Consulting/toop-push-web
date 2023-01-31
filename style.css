@@ -29,6 +29,22 @@ section {
   margin-bottom: 25px;
 }
 
+
+@media screen and (max-width: 800px) {
+  nav{ 
+    display: none;
+  }
+
+  section{
+    display: block;
+  }
+  section .row:nth-child(2){
+    display: none;
+  }
+}
+
+
+
 #total-container {
   display: flex;
   align-items: center;
