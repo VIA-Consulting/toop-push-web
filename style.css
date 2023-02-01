@@ -4,7 +4,7 @@
   --MainBlack: #212121;
   --MainWhite: #fff;
   --MainGrey: #6c6c6c;
-  --LighGrey: #b6b6b6;
+  --LighGrey: #f5f5f5;
   --Shadow: 1px 2px 10px rgba(0, 0, 0, 0.24);
   --Transitions: all 0.6s ease;
   --bs-link-color-rgb: var(--MainBlack);
@@ -14,6 +14,7 @@ body {
   color: var(--MainBlack);
   transition: var(--Transitions);
 }
+
 header,
 nav > ul {
   background: var(--MainWhite);
@@ -103,7 +104,7 @@ section {
 }
 
 #payment-container {
-  background-color: var(--MainWhite);
+  background-color: var(--LighGrey);
   border-radius: 11px;
   padding: 30px;
   padding-bottom: 90px;
