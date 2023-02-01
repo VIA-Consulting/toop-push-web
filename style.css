@@ -82,18 +82,24 @@ section {
   display: none;
 }
 
+.disappear{
+  display: none;
+}
+
 #phone > div {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 99;
   position: absolute;
-  top: calc(100vh / 2 - 175px);
-  left: calc(100vw / 2 - 300px);
+  top: 25%;
+  left: 25%;
 }
 
 #phone form {
+  width: 100%;
   text-align: center;
   background-color: #fff;
   padding: 75px 0;
@@ -110,7 +116,7 @@ section {
   display: block;
 }
 
-#enviar {
+.button-payment {
   border: none;
   background-color: #4d49f5;
   color: #fff;
@@ -122,7 +128,7 @@ section {
   font-weight: 200;
 }
 
-#enviar:hover {
+.button-payment:hover {
   opacity: 1;
   cursor: pointer;
 }

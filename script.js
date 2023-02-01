@@ -1,4 +1,10 @@
 const paymentButtons = document.querySelectorAll(".payment");
+const DEVICES = [
+  {
+    id: "1234567890",
+    phone: "123123123",
+  },
+];
 
 paymentButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
@@ -22,17 +28,40 @@ const comerciante = document.querySelector("#comerciante").innerHTML;
 const total = document.querySelector("#total").innerHTML;
 const phoneNumber = document.querySelector("#number");
 const enviarButton = document.querySelector("#enviar");
+const fecharButton = document.querySelector("#fechar");
+fecharButton.addEventListener("click", () => {
+  document.querySelector(".form-number").classList.remove("disappear");
+  document.querySelector(".sucess").classList.add("disappear");
+
+  phoneNumber.value = "";
+  paymentButtons[2].classList.remove("active");
+  document.querySelector("#phone-container").classList.remove("active");
+  document.querySelector("#phone").classList.remove("active");
+});
 enviarButton.addEventListener("click", () => {
+  const registeredDevice = [];
+  DEVICES.forEach((device) => {
+    if (device.phone === phoneNumber.value) {
+      registeredDevice.push(device);
+    }
+  });
+
   if (phoneNumber.value.length !== 0) {
-    alert(
-      `Comerciante: ${comerciante}\nTelemóvel: ${
-        phoneNumber.value
-      }\nTotal: €${+total}`
-    );
-    phoneNumber.value = "";
-    paymentButtons[2].classList.remove("active");
-    document.querySelector("#phone-container").classList.remove("active");
-    document.querySelector("#phone").classList.remove("active");
+    if (registeredDevice.length === 0) {
+      alert("Número de telemóvel não registado. Favor efetuar registo na app.");
+      paymentButtons[2].classList.remove("active");
+      document.querySelector("#phone-container").classList.remove("active");
+      document.querySelector("#phone").classList.remove("active");
+      phoneNumber.value = "";
+      return;
+    }
+
+    document.querySelector(".form-number").classList.add("disappear");
+    document.querySelector(".spinner").classList.remove("disappear");
+    setTimeout(() => {
+      document.querySelector(".spinner").classList.add("disappear");
+      document.querySelector(".sucess").classList.remove("disappear");
+    }, 5000);
   } else {
     alert("Por favor insira um número de telemóvel");
   }
