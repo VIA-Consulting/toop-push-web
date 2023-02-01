@@ -47,20 +47,25 @@ enviarButton.addEventListener("click", () => {
   });
 
   if (phoneNumber.value.length !== 0) {
-    if (registeredDevice.length === 0) {
-      alert("Número de telemóvel não registado. Favor efetuar registo na app.");
-      paymentButtons[2].classList.remove("active");
-      document.querySelector("#phone-container").classList.remove("active");
-      document.querySelector("#phone").classList.remove("active");
-      phoneNumber.value = "";
-      return;
-    }
-
     document.querySelector(".form-number").classList.add("disappear");
     document.querySelector(".spinner").classList.remove("disappear");
+
     setTimeout(() => {
-      document.querySelector(".spinner").classList.add("disappear");
-      document.querySelector(".sucess").classList.remove("disappear");
+      if (registeredDevice.length === 0) {
+        alert(
+          "Número de telemóvel não registado. Favor efetuar registo na app."
+        );
+        paymentButtons[2].classList.remove("active");
+        document.querySelector("#phone-container").classList.remove("active");
+        document.querySelector("#phone").classList.remove("active");
+        document.querySelector(".spinner").classList.add("disappear");
+        document.querySelector(".form-number").classList.remove("disappear");
+        phoneNumber.value = "";
+        return;
+      } else {
+        document.querySelector(".spinner").classList.add("disappear");
+        document.querySelector(".sucess").classList.remove("disappear");
+      }
     }, 5000);
   } else {
     alert("Por favor insira um número de telemóvel");
@@ -74,9 +79,8 @@ phoneContainer.addEventListener("click", () => {
   document.querySelector("#phone").classList.remove("active");
 });
 
-//Menu Mobile 
+//Menu Mobile
 const menu = document.querySelector("#menu");
 menu.addEventListener("click", () => {
   document.querySelector("#nav-ul").classList.toggle("show");
-  
 });
