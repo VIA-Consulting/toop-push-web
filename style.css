@@ -1,23 +1,41 @@
+:root {
+  --MainColor: #4d49f5;
+  --MainLight: #8684fa;
+  --MainBlack: #212121;
+  --MainWhite: #fff;
+  --MainGrey: #6c6c6c;
+  --LighGrey: #b6b6b6;
+  --Shadow: 1px 2px 10px rgba(0, 0, 0, 0.24);
+  --Transitions: all .600s ease;
+  --bs-link-color-rgb:var(--MainBlack);
+}
+
+body{
+  color: var(--MainBlack);
+  transition: var(--Transitions);
+}
 header,
 nav > ul {
+  background: var(--MainWhite);
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  padding: 0 100px;
+  padding: 0 3rem;
   margin-bottom: 40px;
   margin-top: 15px;
   text-align: center;
+  transition: var(--Transitions);
 }
 
 nav > ul {
   padding: 0;
+  color: var(--MainBlack);
 }
 
 nav > ul > li > a {
   margin-left: 100px;
   text-decoration: none;
-  color: #000;
 }
 
 section {
@@ -29,6 +47,39 @@ section {
   margin-bottom: 25px;
 }
 
+.show{
+  display: block;
+}
+#menu{
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  #menu{
+    display: block;
+  }
+  nav ul{ 
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 2px solid tomato;
+    transition: var(--Transitions);
+  }
+  nav ul > li> a{
+    margin-left: 0;
+  }
+
+
+  section{
+    display: block;
+  }
+  section .row:nth-child(2){
+    display: none;
+  }
+}
+
+
+
 #total-container {
   display: flex;
   align-items: center;
@@ -38,8 +89,8 @@ section {
 
 .payment {
   border: none;
-  color: #fff;
-  background-color: #4d49f5;
+  color: var(--MainWhite);
+  background-color: var(--MainColor);
   opacity: 0.2;
   border-radius: 8px;
   padding: 25px 100px;
@@ -54,7 +105,7 @@ section {
 }
 
 #payment-container {
-  background-color: #f5f5f5;
+  background-color: var(--MainWhite);
   border-radius: 11px;
   padding: 30px;
   padding-bottom: 90px;
@@ -68,7 +119,7 @@ section {
 
 #phone-container {
   display: none;
-  background-color: #212121;
+  background-color: var(--MainBlack);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -101,11 +152,11 @@ section {
 #phone form {
   width: 100%;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--MainWhite);
   padding: 75px 0;
   opacity: 1;
   border-radius: 22px;
-  box-shadow: 0px 10px 40px #0000006f;
+  box-shadow: var(--Shadow);
 }
 
 #phone-container.active {
@@ -118,8 +169,8 @@ section {
 
 .button-payment {
   border: none;
-  background-color: #4d49f5;
-  color: #fff;
+  background-color: var(--MainColor);
+  color: var(--MainWhite);
   padding: 10px 80px;
   border-radius: 8px;
   margin-top: 20px;
@@ -148,7 +199,7 @@ section {
 }
 
 input {
-  border: 1px solid #d6d6d6;
+  border: 1px solid var(--LighGrey);
   padding: 5px 10px;
   border-radius: 8px 0 0 8px;
   font-size: 20px;
@@ -156,7 +207,7 @@ input {
 
 #number {
   border-radius: 0 8px 8px 0;
-  color: #000;
+  color: var(--MainBlack);
   font-weight: bold;
   width: 50%;
 }
