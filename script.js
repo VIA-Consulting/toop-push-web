@@ -28,16 +28,19 @@ const comerciante = document.querySelector("#comerciante").innerHTML;
 const total = document.querySelector("#total").innerHTML;
 const phoneNumber = document.querySelector("#number");
 const enviarButton = document.querySelector("#enviar");
-const fecharButton = document.querySelector("#fechar");
-fecharButton.addEventListener("click", () => {
-  document.querySelector(".form-number").classList.remove("disappear");
-  document.querySelector(".sucess").classList.add("disappear");
+const fecharButton = document.querySelectorAll("#fechar");
+fecharButton.forEach((button) =>
+  button.addEventListener("click", () => {
+    document.querySelector(".form-number").classList.remove("disappear");
+    document.querySelector(".sucess").classList.add("disappear");
+    document.querySelector(".fail").classList.add("disappear");
 
-  phoneNumber.value = "";
-  paymentButtons[2].classList.remove("active");
-  document.querySelector("#phone-container").classList.remove("active");
-  document.querySelector("#phone").classList.remove("active");
-});
+    phoneNumber.value = "";
+    paymentButtons[2].classList.remove("active");
+    document.querySelector("#phone-container").classList.remove("active");
+    document.querySelector("#phone").classList.remove("active");
+  })
+);
 enviarButton.addEventListener("click", () => {
   const registeredDevice = [];
   DEVICES.forEach((device) => {
@@ -52,14 +55,8 @@ enviarButton.addEventListener("click", () => {
 
     setTimeout(() => {
       if (registeredDevice.length === 0) {
-        alert(
-          "Número de telemóvel não registado. Favor efetuar registo na app."
-        );
-        paymentButtons[2].classList.remove("active");
-        document.querySelector("#phone-container").classList.remove("active");
-        document.querySelector("#phone").classList.remove("active");
         document.querySelector(".spinner").classList.add("disappear");
-        document.querySelector(".form-number").classList.remove("disappear");
+        document.querySelector(".fail").classList.remove("disappear");
         phoneNumber.value = "";
         return;
       } else {
@@ -68,7 +65,7 @@ enviarButton.addEventListener("click", () => {
       }
     }, 5000);
   } else {
-    alert("Por favor insira um número de telemóvel");
+    alert("Por favor insira um número de telemóvel.");
   }
 });
 
