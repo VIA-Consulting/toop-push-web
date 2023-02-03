@@ -42,15 +42,15 @@ nav > ul > li > a {
 section {
   display: flex;
   justify-content: center;
-  gap: 16.5%;
+  gap: 10%;
   margin: 0 auto;
-  padding: 0 100px;
   margin-bottom: 25px;
 }
 
 .show {
   display: block;
 }
+
 #menu {
   display: none;
 }
@@ -59,6 +59,7 @@ section {
   #menu {
     display: block;
   }
+
   nav ul {
     display: none;
     position: absolute;
@@ -67,6 +68,7 @@ section {
     border: 2px solid tomato;
     transition: var(--Transitions);
   }
+
   nav ul > li > a {
     margin-left: 0;
   }
@@ -74,6 +76,7 @@ section {
   section {
     display: block;
   }
+
   section .row:nth-child(2) {
     display: none;
   }
@@ -81,9 +84,8 @@ section {
 
 #total-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  align-items: end;
+  gap: 27.5%;
 }
 
 .payment {
@@ -184,7 +186,7 @@ section {
 }
 
 .col {
-  padding-right: 75px;
+  padding-right: 100px;
 }
 
 .subtotal {
@@ -218,5 +220,18 @@ input {
 }
 
 .product > img {
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.product strong {
+  width: 75px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
 }
