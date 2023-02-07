@@ -14,7 +14,7 @@ paymentButtons.forEach((button, index) => {
 
     button.classList.add("active");
 
-    if (index === 2) {
+    if (index === 1) {
       document.querySelector("#phone-container").classList.add("active");
       document.querySelector("#phone").classList.add("active");
     } else {
@@ -36,7 +36,7 @@ fecharButton.forEach((button) =>
     document.querySelector(".fail").classList.add("disappear");
 
     phoneNumber.value = "";
-    paymentButtons[2].classList.remove("active");
+    paymentButtons[1].classList.remove("active");
     document.querySelector("#phone-container").classList.remove("active");
     document.querySelector("#phone").classList.remove("active");
   })
@@ -72,7 +72,7 @@ enviarButton.addEventListener("click", () => {
 
 const phoneContainer = document.querySelector("#phone-container");
 phoneContainer.addEventListener("click", () => {
-  paymentButtons[2].classList.remove("active");
+  paymentButtons[1].classList.remove("active");
   document.querySelector("#phone-container").classList.remove("active");
   document.querySelector("#phone").classList.remove("active");
   document.querySelector("#error-telemovel").classList.add("disappear");
