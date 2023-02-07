@@ -54,6 +54,7 @@ enviarButton.addEventListener("click", () => {
     document.querySelector(".spinner").classList.remove("disappear");
 
     setTimeout(() => {
+      document.querySelector("#error-telemovel").classList.add("disappear");
       if (registeredDevice.length === 0) {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
@@ -65,7 +66,7 @@ enviarButton.addEventListener("click", () => {
       }
     }, 5000);
   } else {
-    alert("Por favor insira um número de telemóvel.");
+    document.querySelector("#error-telemovel").classList.remove("disappear");
   }
 });
 
@@ -74,6 +75,7 @@ phoneContainer.addEventListener("click", () => {
   paymentButtons[2].classList.remove("active");
   document.querySelector("#phone-container").classList.remove("active");
   document.querySelector("#phone").classList.remove("active");
+  document.querySelector("#error-telemovel").classList.add("disappear");
 });
 
 //Menu Mobile
