@@ -34,7 +34,7 @@
   <main>
     <section>
       <div>
-        <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-12" id="products">
           <h2><strong>Carrinho</strong></h2>
           <div class="row">
             <div class="col">
@@ -105,8 +105,78 @@
           <hr>
         </div>
 
+        <div class="col-sm-12 col-md-12" id="products-mobile">
+          <div id="products-mobile-header">
+            <h2><strong>Carrinho2</strong></h2>
+            <h6>
+              <strong>
+                <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
+                Continuar comprando
+              </strong>
+            </h6>
+          </div>
+          <div class="row">
+            <div class="col">
+              <span>Produto</span>
+            </div>
+            <div class="col">
+              <span style="margin-left: 8rem;">Valor</span>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">
+              <div class="product">
+                <img src="./assets/PRODUTO1.PNG" alt="Produto 1">
+                <div class="product-description" style="display: flex; flex-direction: column;">
+                  <strong>Produto 1</strong>
+                  <span>Taman.: <strong>M</strong></span>
+                  <span>Quant.: <strong>1</strong></span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <strong>€89.99</strong>
+              <strong class="delete-product">Remover</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="product">
+                <img src="./assets/PRODUTO2.PNG" alt="Produto 2">
+                <div class="product-description" style="display: flex; flex-direction: column;">
+                  <strong>Produto 2</strong>
+                  <span>Taman.: <strong>M</strong></span>
+                  <span>Quant.: <strong>1</strong></span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <strong>€79.99</strong>
+              <strong class="delete-product">Remover</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="product">
+                <img src="./assets/PRODUTO3.PNG" alt="Produto 3">
+                <div class="product-description" style="display: flex; flex-direction: column;">
+                  <strong>Produto 3</strong>
+                  <span>Taman.: <strong>S</strong></span>
+                  <span>Quant.: <strong>1</strong></span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <strong>€99.99</strong>
+              <strong class="delete-product">Remover</strong>
+            </div>
+          </div>
+          <hr>
+        </div>
+
         <div id="total-container">
-          <div>
+          <div id="total-container-div1">
             <h5>
               <strong>
                 <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
@@ -137,7 +207,7 @@
         </div>
       </div>
 
-      <div class="col-sm-12 col-md-4">
+      <div class="col-sm-12 col-md-4" id="payment-container-parent">
         <div id="payment-container">
           <h2>Pagamento</h2>
           <br>
@@ -172,7 +242,7 @@
             <div style="margin-top: 10px;" id="error-telemovel" class="disappear">
               <span style="color: #F40000;">Por favor insira um número de telemóvel.</span>
             </div>
-            <div>
+            <div id="number-container">
               <input id="country" type="text" placeholder="+351">
               <input type="number" name="number" id="number">
             </div>

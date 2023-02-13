@@ -55,33 +55,6 @@ section {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
-  #menu {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    border: 2px solid tomato;
-    transition: var(--Transitions);
-  }
-
-  nav ul > li > a {
-    margin-left: 0;
-  }
-
-  section {
-    display: block;
-  }
-
-  section .row:nth-child(2) {
-    display: none;
-  }
-}
-
 #total-container {
   display: flex;
   align-items: end;
@@ -234,4 +207,128 @@ input {
 .row {
   display: flex;
   align-items: center;
+}
+
+#products-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    padding: 0 2rem;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: 1;
+    z-index: 99;
+    transition: var(--Transitions);
+  }
+
+  nav ul > li > a {
+    margin-left: 0;
+  }
+
+  section {
+    display: block;
+  }
+
+  #payment-container-parent {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #phone-container {
+    height: 300%;
+  }
+
+  #country,
+  #number {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /* section .row:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+  } */
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-right: 10rem;
+  }
+
+  .col {
+    padding: 0;
+  }
+
+  #total-container-div1 {
+    display: none;
+  }
+
+  .subtotal {
+    width: 100%;
+  }
+
+  .subtotal div {
+    display: flex;
+    justify-content: space-between;
+    gap: 50%;
+  }
+
+  form {
+    width: 150% !important;
+  }
+
+  #number-container {
+    width: 110%;
+  }
+
+  #country {
+    padding-right: 0;
+    padding-left: 0.25rem;
+  }
+
+  #products {
+    display: none;
+  }
+
+  #products-mobile {
+    display: block;
+  }
+
+  #products-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #product-description {
+    width: 200px !important;
+  }
+
+  #product-description span {
+    font-size: 0.25rem;
+  }
+
+  .delete-product {
+    font-size: 0.75rem;
+    text-decoration: underline;
+    color: #999;
+  }
 }

@@ -1,7 +1,7 @@
 const paymentButtons = document.querySelectorAll(".payment");
 const DEVICES = [
   {
-    id: "1234567890",
+    id: "device-1234567890",
     phone: "123123123",
   },
 ];
@@ -17,6 +17,7 @@ paymentButtons.forEach((button, index) => {
     if (index === 1) {
       document.querySelector("#phone-container").classList.add("active");
       document.querySelector("#phone").classList.add("active");
+      window.scrollTo(0, 0);
     } else {
       document.querySelector("#phone-container").classList.remove("active");
       document.querySelector("#phone").classList.remove("active");
@@ -41,21 +42,22 @@ fecharButton.forEach((button) =>
     document.querySelector("#phone").classList.remove("active");
   })
 );
+
 enviarButton.addEventListener("click", () => {
-  const registeredDevice = [];
+  const registeredDevices = [];
   DEVICES.forEach((device) => {
     if (device.phone === phoneNumber.value) {
-      registeredDevice.push(device);
+      registeredDevices.push(device);
     }
   });
 
   if (phoneNumber.value.length !== 0) {
     document.querySelector(".form-number").classList.add("disappear");
     document.querySelector(".spinner").classList.remove("disappear");
+    document.querySelector("#error-telemovel").classList.add("disappear");
 
     setTimeout(() => {
-      document.querySelector("#error-telemovel").classList.add("disappear");
-      if (registeredDevice.length === 0) {
+      if (registeredDevices.length === 0) {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
         phoneNumber.value = "";
@@ -70,6 +72,7 @@ enviarButton.addEventListener("click", () => {
   }
 });
 
+// Grey background of popup
 const phoneContainer = document.querySelector("#phone-container");
 phoneContainer.addEventListener("click", () => {
   paymentButtons[1].classList.remove("active");
@@ -78,8 +81,7 @@ phoneContainer.addEventListener("click", () => {
   document.querySelector("#error-telemovel").classList.add("disappear");
 });
 
-//Menu Mobile
-const menu = document.querySelector("#menu");
-menu.addEventListener("click", () => {
+const menuMobile = document.querySelector("#menu");
+menuMobile.addEventListener("click", () => {
   document.querySelector("#nav-ul").classList.toggle("show");
 });
