@@ -85,3 +85,22 @@ const menuMobile = document.querySelector("#menu");
 menuMobile.addEventListener("click", () => {
   document.querySelector("#nav-ul").classList.toggle("show");
 });
+
+const pushNotification = async (payload) => {
+  try {
+    const notification = await axios.post("", payload);
+    console.log(notification.data);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+pushNotification({
+  Token:
+    "fml04QoeSGqzdJ5CwyXxES:APA91bE9iP6bSSsasYBtU4Z6BBPbrS6JKi6J0-LoLebypSuKYPgKVnAOCII8V2oqIlWlRQemMEKil7ja4zswjVwprtQMWzto12ayml5qLOolDoBgicMnemzJWdEt2vpEgowQMY38oLq1",
+  Data: { Value: parseInt(total) },
+  Notification: {
+    Title: `${comerciante}`,
+    Message: `Pagamento de €${total}`,
+  },
+});
