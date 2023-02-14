@@ -96,11 +96,15 @@ const pushNotification = async (payload) => {
 };
 
 pushNotification({
-  Token:
+  // comercianteId: como pegar esse Id?,
+  orderId: "order-1",
+  token:
     "fml04QoeSGqzdJ5CwyXxES:APA91bE9iP6bSSsasYBtU4Z6BBPbrS6JKi6J0-LoLebypSuKYPgKVnAOCII8V2oqIlWlRQemMEKil7ja4zswjVwprtQMWzto12ayml5qLOolDoBgicMnemzJWdEt2vpEgowQMY38oLq1",
-  Data: { Value: parseInt(total) },
-  Notification: {
-    Title: `${comerciante}`,
-    Message: `Pagamento de €${total}`,
+  data: { Value: parseInt(total) },
+  notification: {
+    title: `${comerciante}`,
+    message: `Pagamento de €${total}`,
   },
+  telemovel: `${phoneNumber.value}`,
+  // details (optional): [{name: 'Product 1', size: 'M', quantity: '1', price: '10'}]
 });
