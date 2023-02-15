@@ -86,7 +86,7 @@ menuMobile.addEventListener("click", () => {
   document.querySelector("#nav-ul").classList.toggle("show");
 });
 
-const pushNotification = async (payload) => {
+const sendPushNotification = async (payload) => {
   try {
     const notification = await axios.post("", payload);
     console.log(notification.data);
@@ -95,16 +95,18 @@ const pushNotification = async (payload) => {
   }
 };
 
-pushNotification({
-  // comercianteId: como pegar esse Id?,
+sendPushNotification({
   orderId: "order-1",
-  token:
-    "fml04QoeSGqzdJ5CwyXxES:APA91bE9iP6bSSsasYBtU4Z6BBPbrS6JKi6J0-LoLebypSuKYPgKVnAOCII8V2oqIlWlRQemMEKil7ja4zswjVwprtQMWzto12ayml5qLOolDoBgicMnemzJWdEt2vpEgowQMY38oLq1",
-  data: { Value: parseFloat(total) },
+  // comercianteId: como pegar esse Id?, no Onboarding?
+  data: {
+    store: `${comerciante}`,
+    // details (optional): [{name: 'Product 1', size: 'M', quantity: '1', price: '10'}, ...]
+    totalValue: parseFloat(total),
+  },
   notification: {
     title: `${comerciante}`,
     message: `Pagamento de €${total}`,
   },
-  telemovel: `${phoneNumber.value}`,
-  // details (optional): [{name: 'Product 1', size: 'M', quantity: '1', price: '10'}, ...]
+  countryCode: ``,
+  phoneNumber: `${phoneNumber.value}`,
 });
