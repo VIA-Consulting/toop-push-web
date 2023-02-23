@@ -85,42 +85,42 @@ enviarButton.addEventListener("click", () => {
       phoneNumber.value = "";
     });
 
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8090/portal-api/sendPush",
-      data: JSON.stringify({
-        data: {
-          valor: parseFloat($("#total").text()),
-          ddd: parseInt($("#country").val()),
-          numero:phoneNumber.value
-        },
-        notificacao: {
-          titulo: "Teste 3",
-          mensagem: "Teste 3",
-        },
-      }),
-      contentType: "application/json; charset=utf-8",
-    }).done(() => {
-
-      document.querySelector(".spinner").classList.add("disappear");
-      document.querySelector(".sucess").classList.remove("disappear");
-    }).fail(() => {
-      document.querySelector(".spinner").classList.add("disappear");
-      document.querySelector(".fail").classList.remove("disappear");
-      phoneNumber.value = "";
-    });
-
-    // setTimeout(() => {
-    //   if (registeredDevices.length === 0) {
-    //     document.querySelector(".spinner").classList.add("disappear");
-    //     document.querySelector(".fail").classList.remove("disappear");
-    //     phoneNumber.value = "";
-    //     return;
-    //   }
+    // $.ajax({
+    //   type: "POST",
+    //   url: "http://localhost:8090/portal-api/sendPush",
+    //   data: JSON.stringify({
+    //     data: {
+    //       valor: parseFloat($("#total").text()),
+    //       ddd: parseInt($("#country").val()),
+    //       numero:phoneNumber.value
+    //     },
+    //     notificacao: {
+    //       titulo: "Teste 3",
+    //       mensagem: "Teste 3",
+    //     },
+    //   }),
+    //   contentType: "application/json; charset=utf-8",
+    // }).done(() => {
 
     //   document.querySelector(".spinner").classList.add("disappear");
     //   document.querySelector(".sucess").classList.remove("disappear");
-    // }, 5000);
+    // }).fail(() => {
+    //   document.querySelector(".spinner").classList.add("disappear");
+    //   document.querySelector(".fail").classList.remove("disappear");
+    //   phoneNumber.value = "";
+    // });
+
+    setTimeout(() => {
+      if (registeredDevices.length === 0) {
+        document.querySelector(".spinner").classList.add("disappear");
+        document.querySelector(".fail").classList.remove("disappear");
+        phoneNumber.value = "";
+        return;
+      }
+
+      document.querySelector(".spinner").classList.add("disappear");
+      document.querySelector(".sucess").classList.remove("disappear");
+    }, 5000);
   } else {
     document.querySelector("#error-telemovel").classList.remove("disappear");
   }
