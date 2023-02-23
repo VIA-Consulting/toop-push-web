@@ -11,6 +11,9 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./spinner.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>ToP | Push App</title>
 </head>
 
@@ -212,6 +215,8 @@
           <h2>Pagamento</h2>
           <br>
           <div>
+            <span>Pedido: #123456</span>
+            <br>
             <span>Comerciante: </span>
             <span id="comerciante">Loja teste</span>
           </div>
@@ -223,9 +228,12 @@
             </button>
             <br>
             <button class="payment">
-              <strong>VISA/MasterCard</strong>
+              <img style="width: 6rem;" src="./assets/booya.png" alt="Booya Shop logo">
             </button>
             <br>
+            <div id="booya-description">
+              <small><a href="#">O que é?</a></small>
+            </div>
           </div>
         </div>
       </div>
@@ -236,7 +244,7 @@
       <div>
         <form>
           <div class="form-number">
-            <h4><strong>Pagamento TooP</strong></h4>
+            <h4><strong>Pagamento Booya Shop</strong></h4>
             <br>
             <span>Insira seu número de telemóvel<br>para prosseguir com o pagamento na APP:</span>
             <div style="margin-top: 10px;" id="error-telemovel" class="disappear">
@@ -244,14 +252,19 @@
             </div>
             <div id="number-container">
               <input id="country" type="text" placeholder="+351">
-              <input type="number" name="number" id="number">
+              <input type="tel" name="number" id="number">
             </div>
+            <br>
+            <small>
+              Ainda não tens registo? <a href="#" rel="noopener noreferrer">Faça o download da app</a>
+            </small>
+            <br>
             <button type="button" class="button-payment" id="enviar">E N V I A R</button>
           </div>
 
           <div class="spinner disappear">
             <div>
-              <h4><strong>Pagamento TooP</strong></h4>
+              <h4><strong>Pagamento Booya Shop</strong></h4>
               <br>
               <span>A aguardar pagamento.</span>
             </div>
@@ -270,7 +283,7 @@
 
           <div class="sucess disappear">
             <div>
-              <h4><strong>Pagamento TooP</strong></h4>
+              <h4><strong>Pagamento Booya Shop</strong></h4>
               <br>
               <span>Pagamento confirmado!</span>
             </div>
@@ -284,9 +297,13 @@
 
           <div class="fail disappear">
             <div>
-              <h4><strong>Pagamento TooP</strong></h4>
+              <h4><strong>Pagamento Booya Shop</strong></h4>
               <br>
-              <span>Número de telemóvel não registado! Favor efetuar registo na APP.</span>
+              <span>Não foi possível completar o pagamento!</span>
+              <br>
+              <small>
+                Ainda não tens registo? <a href="#" rel="noopener noreferrer">Faça o download da app</a>
+              </small>
             </div>
             <div>
               <img src="./assets/fail.png" style="width: 125px;">
