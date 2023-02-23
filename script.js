@@ -2,7 +2,7 @@ const paymentButtons = document.querySelectorAll(".payment");
 const DEVICES = [
   {
     id: "device-1234567890",
-    phone: "123123123",
+    phone: "932008993",
   },
 ];
 
@@ -45,6 +45,7 @@ fecharButton.forEach((button) =>
 
 enviarButton.addEventListener("click", () => {
   const registeredDevices = [];
+  console.log(phoneNumber.value);
   DEVICES.forEach((device) => {
     if (device.phone === phoneNumber.value) {
       registeredDevices.push(device);
@@ -55,18 +56,33 @@ enviarButton.addEventListener("click", () => {
     document.querySelector(".form-number").classList.add("disappear");
     document.querySelector(".spinner").classList.remove("disappear");
     document.querySelector("#error-telemovel").classList.add("disappear");
+    console.log("teste");
 
-    setTimeout(() => {
-      if (registeredDevices.length === 0) {
-        document.querySelector(".spinner").classList.add("disappear");
-        document.querySelector(".fail").classList.remove("disappear");
-        phoneNumber.value = "";
-        return;
-      } else {
-        document.querySelector(".spinner").classList.add("disappear");
-        document.querySelector(".sucess").classList.remove("disappear");
-      }
-    }, 5000);
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8090/portal-api/sendPush",
+      data: JSON.stringify({
+        data: {
+          valor: parseFloat($("#total").text()),
+          ddd: parseInt($("#country").val()),
+          numero:phoneNumber.value
+        },
+        notificacao: {
+          titulo: "Teste 3",
+          mensagem: "Teste 3",
+        },
+      }),
+      contentType: "application/json; charset=utf-8",
+    }).done(() => {
+      
+      document.querySelector(".spinner").classList.add("disappear");
+      document.querySelector(".sucess").classList.remove("disappear");
+    }).fail(() => {
+      document.querySelector(".spinner").classList.add("disappear");
+      document.querySelector(".fail").classList.remove("disappear");
+      phoneNumber.value = "";
+    });
+
   } else {
     document.querySelector("#error-telemovel").classList.remove("disappear");
   }
