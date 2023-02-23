@@ -63,9 +63,8 @@ section {
 
 .payment {
   border: none;
-  color: var(--MainWhite);
-  background-color: var(--MainColor);
-  opacity: 0.2;
+  color: #c2c0fc;
+  background-color: var(--MainWhite);
   border-radius: 8px;
   padding: 25px 100px;
   width: 100%;
@@ -74,8 +73,16 @@ section {
 
 .payment:hover,
 .payment.active {
-  opacity: 1;
+  opacity: 1.1;
   cursor: pointer;
+  box-shadow: var(--Shadow);
+}
+
+#booya-description {
+  display: flex;
+  justify-content: end;
+  margin-top: -2.5rem;
+  margin-right: 1rem;
 }
 
 #payment-container {
