@@ -67,23 +67,25 @@ enviarButton.addEventListener("click", () => {
         data: {
           valor: parseFloat($("#total").text()),
           ddd: parseInt($("#country").val()),
-          numero:phoneNumber.value
+          numero: phoneNumber.value,
+          merchant: comerciante,
         },
         notificacao: {
-          titulo: "Teste 3",
-          mensagem: "Teste 3",
+          titulo: `Pedido ${$("#order-id").text()} - ${comerciante}`,
+          mensagem: `Pagamento de €${total}`,
         },
       }),
       contentType: "application/json; charset=utf-8",
-    }).done(() => {
-      
-      document.querySelector(".spinner").classList.add("disappear");
-      document.querySelector(".sucess").classList.remove("disappear");
-    }).fail(() => {
-      document.querySelector(".spinner").classList.add("disappear");
-      document.querySelector(".fail").classList.remove("disappear");
-      phoneNumber.value = "";
-    });
+    })
+      .done(() => {
+        document.querySelector(".spinner").classList.add("disappear");
+        document.querySelector(".sucess").classList.remove("disappear");
+      })
+      .fail(() => {
+        document.querySelector(".spinner").classList.add("disappear");
+        document.querySelector(".fail").classList.remove("disappear");
+        phoneNumber.value = "";
+      });
   } else {
     document.querySelector("#error-telemovel").classList.remove("disappear");
   }
