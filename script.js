@@ -58,7 +58,6 @@ enviarButton.addEventListener("click", () => {
     document.querySelector(".form-number").classList.add("disappear");
     document.querySelector(".spinner").classList.remove("disappear");
     document.querySelector("#error-telemovel").classList.add("disappear");
-    console.log("teste"); // pra q isso?
 
     $.ajax({
       type: "POST",
@@ -105,18 +104,9 @@ menuMobile.addEventListener("click", () => {
   document.querySelector("#nav-ul").classList.toggle("show");
 });
 
-const sendPushNotification = async (payload) => {
-  try {
-    const notification = await axios.post("", payload);
-    console.log(notification.data);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 sendPushNotification({
-  orderId: "order-001",
-  // comercianteId: como pegar esse Id?, no Onboarding?
+  orderId: $("#order-id").text(),
+  // comercianteId: pegar Id no Onboarding,
   data: {
     store: comerciante,
     // details (optional): [{name: 'Product 1', size: 'M', quantity: '1', price: '10'}, ...]
