@@ -114,6 +114,7 @@ phoneContainer.addEventListener("click", () => {
   document.querySelector("#phone").classList.remove("active");
   document.querySelector("#error-telemovel").classList.add("disappear");
   document.querySelector(".what-is").classList.add("disappear");
+  document.querySelector(".fail").classList.add("disappear");
 });
 
 const menuMobile = document.querySelector("#menu");
