@@ -17,6 +17,7 @@ paymentButtons.forEach((button, index) => {
     if (index === 1) {
       document.querySelector("#phone-container").classList.add("active");
       document.querySelector("#phone").classList.add("active");
+      document.querySelector(".form-number").classList.remove("disappear");
       window.scrollTo(0, 0);
     } else {
       document.querySelector("#phone-container").classList.remove("active");
@@ -35,8 +36,9 @@ const fecharButton = document.querySelectorAll("#fechar");
 fecharButton.forEach((button) =>
   button.addEventListener("click", () => {
     document.querySelector(".form-number").classList.remove("disappear");
-    document.querySelector(".sucess").classList.add("disappear");
+    document.querySelector(".success").classList.add("disappear");
     document.querySelector(".fail").classList.add("disappear");
+    document.querySelector(".what-is").classList.add("disappear");
 
     phoneNumber.value = "";
     paymentButtons[1].classList.remove("active");
@@ -80,7 +82,9 @@ enviarButton.addEventListener("click", () => {
     })
       .done(() => {
         document.querySelector(".spinner").classList.add("disappear");
-        document.querySelector(".sucess").classList.remove("disappear");
+        document.querySelector(".what-is").classList.add("disappear");
+        document.querySelector(".success").classList.remove("disappear");
+        phoneNumber.value = "";
       })
       .fail((error) => {
         document.querySelector(".spinner").classList.add("disappear");
@@ -100,6 +104,8 @@ phoneContainer.addEventListener("click", () => {
   document.querySelector("#phone-container").classList.remove("active");
   document.querySelector("#phone").classList.remove("active");
   document.querySelector("#error-telemovel").classList.add("disappear");
+  document.querySelector(".what-is").classList.add("disappear");
+  document.querySelector(".fail").classList.add("disappear");
 });
 
 const menuMobile = document.querySelector("#menu");
@@ -107,27 +113,29 @@ menuMobile.addEventListener("click", () => {
   document.querySelector("#nav-ul").classList.toggle("show");
 });
 
-const sendPushNotification = async (payload) => {
-  try {
-    const notification = await axios.post("", payload);
-    console.log(notification.data);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-sendPushNotification({
-  orderId: "order-001",
-  // comercianteId: como pegar esse Id?, no Onboarding?
-  data: {
-    store: comerciante,
-    // details (optional): [{name: 'Product 1', size: 'M', quantity: '1', price: '10'}, ...]
-    totalValue: parseFloat(total),
-  },
-  notification: {
-    title: comerciante,
-    message: `Pagamento de €${total}`,
-  },
-  countryCode: phoneCountry.value,
-  phoneNumber: phoneNumber.value,
+const btnWhatIs = document.querySelector("#btn-what-is");
+btnWhatIs.addEventListener("click", () => {
+  document.querySelector("#phone-container").classList.add("active");
+  document.querySelector("#phone").classList.add("active");
+  document.querySelector(".form-number").classList.add("disappear");
+  document.querySelector(".fail").classList.add("disappear");
+  document.querySelector(".success").classList.add("disappear");
+  document.querySelector(".what-is").classList.remove("disappear");
+  window.scrollTo(0, 0);
 });
+
+// sendPushNotification({
+//   orderId: $("#order-id").text(),
+//   comercianteId: pegar Id no Onboarding,
+//   data: {
+//     store: comerciante,
+//     details (optional): [{name: 'Product 1', size: 'M', quantity: '1', price: '10'}, ...]
+//     totalValue: parseFloat(total),
+//   },
+//   notification: {
+//     title: comerciante,
+//     message: `Pagamento de €${total}`,
+//   },
+//   countryCode: phoneCountry.value,
+//   phoneNumber: phoneNumber.value,
+// });
