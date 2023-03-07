@@ -58,8 +58,8 @@ enviarButton.addEventListener("click", () => {
     document.querySelector(".form-number").classList.add("disappear");
     document.querySelector(".spinner").classList.remove("disappear");
     document.querySelector("#error-telemovel").classList.add("disappear");
-    console.log("teste"); // pra q isso?
 
+    $("#fail-message").text("")
     $.ajax({
       type: "POST",
       url: "http://localhost:8090/portal-api/sendPush",
@@ -69,10 +69,11 @@ enviarButton.addEventListener("click", () => {
           ddd: parseInt($("#country").val()),
           numero: phoneNumber.value,
           merchant: comerciante,
+          orderId:$("#order-id").text()
         },
         notificacao: {
           titulo: `Pedido ${$("#order-id").text()} - ${comerciante}`,
-          mensagem: `Pagamento de €${total}`,
+          mensagem: `Pagamento de ${total}`,
         },
       }),
       contentType: "application/json; charset=utf-8",
@@ -81,9 +82,10 @@ enviarButton.addEventListener("click", () => {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".sucess").classList.remove("disappear");
       })
-      .fail(() => {
+      .fail((error) => {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
+        $("#fail-message").text(error.responseText)
         phoneNumber.value = "";
       });
   } else {
