@@ -1,0 +1,20 @@
+{
+  "name": "top-push",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VIA-Consulting/top-push-web.git"
+  },
+  "author": "Andre Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VIA-Consulting/top-push-web/issues"
+  },
+  "homepage": "https://github.com/VIA-Consulting/top-push-web#readme"
+}

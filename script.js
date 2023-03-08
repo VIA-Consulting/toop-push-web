@@ -1,3 +1,5 @@
+// import { inputInstance } from "./phone.js";
+// const inputInstance = require("./phone.js");
 const paymentButtons = document.querySelectorAll(".payment");
 const DEVICES = [
   {
@@ -28,7 +30,7 @@ paymentButtons.forEach((button, index) => {
 
 const comerciante = document.querySelector("#comerciante").innerHTML;
 const total = document.querySelector("#total").innerHTML;
-const phoneNumber = document.querySelector("#number");
+const phoneNumber = document.querySelector("#mobile_code");
 const phoneCountry = document.querySelector("#country");
 const enviarButton = document.querySelector("#enviar");
 const fecharButton = document.querySelectorAll("#fechar");
@@ -49,7 +51,6 @@ fecharButton.forEach((button) =>
 
 enviarButton.addEventListener("click", () => {
   const registeredDevices = [];
-  console.log(phoneNumber.value);
   DEVICES.forEach((device) => {
     if (device.phone === phoneNumber.value) {
       registeredDevices.push(device);
