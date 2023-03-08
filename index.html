@@ -1,346 +1,419 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./spinner.css" />
+    <link rel="stylesheet" href="./phone.css" />
+    <link rel="stylesheet" href="inputTel/build/css/intlTelInput.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    crossorigin="anonymous" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./spinner.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>Booya Shop Web</title>
-</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Booya Shop Web</title>
+  </head>
 
-<body>
-  <header>
-    <h3><strong>logo.empresa</strong></h3>
-    <nav>
-      <img id="menu" src="./assets/svg/menu.svg" alt="menu">
-      <ul id="nav-ul">
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Sobre nós</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#"><i class="bi bi-search"></i></a></li>
-        <li><a href="#"><i class="bi bi-bag-dash"></i></a></li>
-        <li><a href="#"><i class="bi bi-list"></i></a></li>
-      </ul>
+  <body>
+    <header>
+      <h3><strong>logo.empresa</strong></h3>
+      <nav>
+        <img id="menu" src="./assets/svg/menu.svg" alt="menu" />
+        <ul id="nav-ul">
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li>
+            <a href="#"><i class="bi bi-search"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-bag-dash"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-list"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <div>
-        <div class="col-sm-12 col-md-12" id="products">
-          <h2><strong>Carrinho</strong></h2>
-          <div class="row">
-            <div class="col">
-              <span>Produto</span>
-            </div>
-            <div class="col">
-              <span>Tamanho</span>
-            </div>
-            <div class="col">
-              <span>Quantidade</span>
-            </div>
-            <div class="col">
-              <span>Valor</span>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col">
-              <div class="product">
-                <img src="./assets/PRODUTO1.PNG" alt="Produto 1">
-                <strong>Produto 1</strong>
+    <main>
+      <section>
+        <div>
+          <div class="col-sm-12 col-md-12" id="products">
+            <h2><strong>Carrinho</strong></h2>
+            <div class="row">
+              <div class="col">
+                <span>Produto</span>
+              </div>
+              <div class="col">
+                <span>Tamanho</span>
+              </div>
+              <div class="col">
+                <span>Quantidade</span>
+              </div>
+              <div class="col">
+                <span>Valor</span>
               </div>
             </div>
-            <div class="col">
-              <strong>M</strong>
-            </div>
-            <div class="col">
-              <strong>1</strong>
-            </div>
-            <div class="col">
-              <strong>€89.99</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="product">
-                <img src="./assets/PRODUTO2.PNG" alt="Produto 2">
-                <strong>Produto 2</strong>
-              </div>
-            </div>
-            <div class="col">
-              <strong>M</strong>
-            </div>
-            <div class="col">
-              <strong>1</strong>
-            </div>
-            <div class="col">
-              <strong>€79.99</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="product">
-                <img src="./assets/PRODUTO3.PNG" alt="Produto 3">
-                <strong>Produto 3</strong>
-              </div>
-            </div>
-            <div class="col">
-              <strong>S</strong>
-            </div>
-            <div class="col">
-              <strong>1</strong>
-            </div>
-            <div class="col">
-              <strong>€99.99</strong>
-            </div>
-          </div>
-          <hr>
-        </div>
-
-        <div class="col-sm-12 col-md-12" id="products-mobile">
-          <div id="products-mobile-header">
-            <h2><strong>Carrinho2</strong></h2>
-            <h6>
-              <strong>
-                <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
-                Continuar comprando
-              </strong>
-            </h6>
-          </div>
-          <div class="row">
-            <div class="col">
-              <span>Produto</span>
-            </div>
-            <div class="col">
-              <span style="margin-left: 8rem;">Valor</span>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col">
-              <div class="product">
-                <img src="./assets/PRODUTO1.PNG" alt="Produto 1">
-                <div class="product-description" style="display: flex; flex-direction: column;">
+            <hr />
+            <div class="row">
+              <div class="col">
+                <div class="product">
+                  <img src="./assets/PRODUTO1.PNG" alt="Produto 1" />
                   <strong>Produto 1</strong>
-                  <span>Taman.: <strong>M</strong></span>
-                  <span>Quant.: <strong>1</strong></span>
                 </div>
               </div>
+              <div class="col">
+                <strong>M</strong>
+              </div>
+              <div class="col">
+                <strong>1</strong>
+              </div>
+              <div class="col">
+                <strong>€89.99</strong>
+              </div>
             </div>
-            <div class="col">
-              <strong>€89.99</strong>
-              <strong class="delete-product">Remover</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="product">
-                <img src="./assets/PRODUTO2.PNG" alt="Produto 2">
-                <div class="product-description" style="display: flex; flex-direction: column;">
+            <div class="row">
+              <div class="col">
+                <div class="product">
+                  <img src="./assets/PRODUTO2.PNG" alt="Produto 2" />
                   <strong>Produto 2</strong>
-                  <span>Taman.: <strong>M</strong></span>
-                  <span>Quant.: <strong>1</strong></span>
                 </div>
               </div>
+              <div class="col">
+                <strong>M</strong>
+              </div>
+              <div class="col">
+                <strong>1</strong>
+              </div>
+              <div class="col">
+                <strong>€79.99</strong>
+              </div>
             </div>
-            <div class="col">
-              <strong>€79.99</strong>
-              <strong class="delete-product">Remover</strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="product">
-                <img src="./assets/PRODUTO3.PNG" alt="Produto 3">
-                <div class="product-description" style="display: flex; flex-direction: column;">
+            <div class="row">
+              <div class="col">
+                <div class="product">
+                  <img src="./assets/PRODUTO3.PNG" alt="Produto 3" />
                   <strong>Produto 3</strong>
-                  <span>Taman.: <strong>S</strong></span>
-                  <span>Quant.: <strong>1</strong></span>
+                </div>
+              </div>
+              <div class="col">
+                <strong>S</strong>
+              </div>
+              <div class="col">
+                <strong>1</strong>
+              </div>
+              <div class="col">
+                <strong>€99.99</strong>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div class="col-sm-12 col-md-12" id="products-mobile">
+            <div id="products-mobile-header">
+              <h2><strong>Carrinho2</strong></h2>
+              <h6>
+                <strong>
+                  <i
+                    style="font-size: 14px; margin-right: 5px"
+                    class="bi bi-chevron-left"
+                  ></i>
+                  Continuar comprando
+                </strong>
+              </h6>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span>Produto</span>
+              </div>
+              <div class="col">
+                <span style="margin-left: 8rem">Valor</span>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col">
+                <div class="product">
+                  <img src="./assets/PRODUTO1.PNG" alt="Produto 1" />
+                  <div
+                    class="product-description"
+                    style="display: flex; flex-direction: column"
+                  >
+                    <strong>Produto 1</strong>
+                    <span>Taman.: <strong>M</strong></span>
+                    <span>Quant.: <strong>1</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <strong>€89.99</strong>
+                <strong class="delete-product">Remover</strong>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="product">
+                  <img src="./assets/PRODUTO2.PNG" alt="Produto 2" />
+                  <div
+                    class="product-description"
+                    style="display: flex; flex-direction: column"
+                  >
+                    <strong>Produto 2</strong>
+                    <span>Taman.: <strong>M</strong></span>
+                    <span>Quant.: <strong>1</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <strong>€79.99</strong>
+                <strong class="delete-product">Remover</strong>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="product">
+                  <img src="./assets/PRODUTO3.PNG" alt="Produto 3" />
+                  <div
+                    class="product-description"
+                    style="display: flex; flex-direction: column"
+                  >
+                    <strong>Produto 3</strong>
+                    <span>Taman.: <strong>S</strong></span>
+                    <span>Quant.: <strong>1</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <strong>€99.99</strong>
+                <strong class="delete-product">Remover</strong>
+              </div>
+            </div>
+            <hr />
+          </div>
+
+          <div id="total-container">
+            <div id="total-container-div1">
+              <h5>
+                <strong>
+                  <i
+                    style="font-size: 14px; margin-right: 5px"
+                    class="bi bi-chevron-left"
+                  ></i>
+                  Continuar comprando
+                </strong>
+              </h5>
+            </div>
+
+            <div class="subtotal">
+              <div>
+                <span>Subtotal</span>
+                <span><strong>€ 269.97</strong></span>
+              </div>
+              <br />
+              <div>
+                <span>Frete</span>
+                <span><strong>Grátis</strong></span>
+              </div>
+              <hr />
+              <div>
+                <span><strong>Total</strong></span>
+                <span style="font-size: 20px; font-weight: bold">
+                  €
+                  <span id="total">269.97</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4" id="payment-container-parent">
+          <div id="payment-container">
+            <h2>Pagamento</h2>
+            <br />
+            <div>
+              <span>Pedido: <span id="order-id">#123456</span></span>
+              <br />
+              <span>Comerciante: </span>
+              <span id="comerciante">Loja teste</span>
+            </div>
+            <span>Pagar com:</span>
+            <div>
+              <br />
+              <button class="payment">
+                <strong>PayPal</strong>
+              </button>
+              <br />
+              <button class="payment">
+                <img
+                  style="width: 6rem"
+                  src="./assets/booya.png"
+                  alt="Booya Shop logo"
+                />
+              </button>
+              <br />
+              <div id="booya-description">
+                <small><a href="#" id="btn-what-is">O que é?</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="phone-container"></div>
+      <div id="phone">
+        <div>
+          <form>
+            <div class="form-number">
+              <h4><strong>Pagamento Booya Shop</strong></h4>
+              <br />
+              <span
+                >Insira seu número de telemóvel<br />para prosseguir com o
+                pagamento na APP:</span
+              >
+              <div
+                style="margin-top: 10px"
+                id="error-telemovel"
+                class="disappear"
+              >
+                <span style="color: #f40000"
+                  >Por favor insira um número de telemóvel válido.</span
+                >
+              </div>
+              <div id="number-container" style="margin-top: 5%;">
+                <input
+                  type="text"
+                  id="mobile_code"
+                  class="form-control"
+                  placeholder="Phone Number"
+                  name="name"
+                />
+              </div>
+              <br />
+              <small>
+                Ainda não tens registo?
+                <a
+                  href="https://play.google.com/store/games"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Faça o download da app</a
+                >
+              </small>
+              <br />
+              <button type="button" class="button-payment" id="enviar">
+                E N V I A R
+              </button>
+            </div>
+
+            <div class="spinner disappear">
+              <div>
+                <h4><strong>Pagamento Booya Shop</strong></h4>
+                <br />
+                <span>A aguardar pagamento.</span>
+              </div>
+              <div class="loadingio-spinner-spinner-qma7f0tjwp">
+                <div class="ldio-9uyf3pomsv6">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <strong>€99.99</strong>
-              <strong class="delete-product">Remover</strong>
-            </div>
-          </div>
-          <hr>
-        </div>
 
-        <div id="total-container">
-          <div id="total-container-div1">
-            <h5>
-              <strong>
-                <i style="font-size: 14px; margin-right: 5px;" class="bi bi-chevron-left"></i>
-                Continuar comprando
-              </strong>
-            </h5>
-          </div>
-
-          <div class="subtotal">
-            <div>
-              <span>Subtotal</span>
-              <span><strong>€ 269.97</strong></span>
-            </div>
-            <br>
-            <div>
-              <span>Frete</span>
-              <span><strong>Grátis</strong></span>
-            </div>
-            <hr>
-            <div>
-              <span><strong>Total</strong></span>
-              <span style="font-size: 20px; font-weight: bold;">
-                €
-                <span id="total">269.97</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-4" id="payment-container-parent">
-        <div id="payment-container">
-          <h2>Pagamento</h2>
-          <br>
-          <div>
-            <span>Pedido: <span id="order-id">#123456</span></span>
-            <br>
-            <span>Comerciante: </span>
-            <span id="comerciante">Loja teste</span>
-          </div>
-          <span>Pagar com:</span>
-          <div>
-            <br>
-            <button class="payment">
-              <strong>PayPal</strong>
-            </button>
-            <br>
-            <button class="payment">
-              <img style="width: 6rem;" src="./assets/booya.png" alt="Booya Shop logo">
-            </button>
-            <br>
-            <div id="booya-description">
-              <small><a href="#" id="btn-what-is">O que é?</a></small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div id="phone-container"></div>
-    <div id="phone">
-      <div>
-        <form>
-          <div class="form-number">
-            <h4><strong>Pagamento Booya Shop</strong></h4>
-            <br>
-            <span>Insira seu número de telemóvel<br>para prosseguir com o pagamento na APP:</span>
-            <div style="margin-top: 10px;" id="error-telemovel" class="disappear">
-              <span style="color: #F40000;">Por favor insira um número de telemóvel válido.</span>
-            </div>
-            <div id="number-container">
-              <input id="country" type="number" placeholder="+351" required>
-              <input type="number" name="number" id="number" required>
-            </div>
-            <br>
-            <small>
-              Ainda não tens registo? <a href="https://play.google.com/store/games" target="_blank"
-                rel="noopener noreferrer">Faça o download da app</a>
-            </small>
-            <br>
-            <button type="button" class="button-payment" id="enviar">E N V I A R</button>
-          </div>
-
-          <div class="spinner disappear">
-            <div>
-              <h4><strong>Pagamento Booya Shop</strong></h4>
-              <br>
-              <span>A aguardar pagamento.</span>
-            </div>
-            <div class="loadingio-spinner-spinner-qma7f0tjwp">
-              <div class="ldio-9uyf3pomsv6">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="success disappear">
+              <div>
+                <h4><strong>Pagamento Booya Shop</strong></h4>
+                <br />
+                <span>Pagamento confirmado!</span>
+              </div>
+              <div>
+                <img src="./assets/success.png" />
+              </div>
+              <div>
+                <button type="button" class="button-payment" id="fechar">
+                  F E C H A R
+                </button>
               </div>
             </div>
-          </div>
 
-          <div class="success disappear">
-            <div>
-              <h4><strong>Pagamento Booya Shop</strong></h4>
-              <br>
-              <span>Pagamento confirmado!</span>
+            <div class="fail disappear">
+              <div>
+                <h4><strong>Pagamento Booya Shop</strong></h4>
+                <br />
+                <span id="fail-message"
+                  >Não foi possível completar o pagamento!</span
+                >
+                <br />
+                <small>
+                  Ainda não tens registo?
+                  <a
+                    href="https://play.google.com/store/games"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Faça o download da app</a
+                  >
+                </small>
+              </div>
+              <div>
+                <img src="./assets/fail.png" style="width: 125px" />
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="button-payment"
+                  id="fechar"
+                  style="background-color: #f40000"
+                >
+                  F E C H A R
+                </button>
+              </div>
             </div>
-            <div>
-              <img src="./assets/success.png">
-            </div>
-            <div>
-              <button type="button" class="button-payment" id="fechar">F E C H A R</button>
-            </div>
-          </div>
 
-          <div class="fail disappear">
-            <div>
-              <h4><strong>Pagamento Booya Shop</strong></h4>
-              <br>
-              <span id="fail-message">Não foi possível completar o pagamento!</span>
-              <br>
-              <small>
-                Ainda não tens registo? <a href="https://play.google.com/store/games" target="_blank"
-                  rel="noopener noreferrer">Faça o download da app</a>
-              </small>
+            <div class="what-is disappear">
+              <div>
+                <h4><strong>O que é o Booya Shop?</strong></h4>
+                <br />
+                <span> Aqui estará o texto explicativo da nossa app. </span>
+                <br />
+              </div>
+              <div>
+                <button type="button" class="button-payment" id="fechar">
+                  F E C H A R
+                </button>
+              </div>
             </div>
-            <div>
-              <img src="./assets/fail.png" style="width: 125px;">
-            </div>
-            <div>
-              <button type="button" class="button-payment" id="fechar" style="background-color: #F40000;">
-                F E C H A R
-              </button>
-            </div>
-          </div>
-
-          <div class="what-is disappear">
-            <div>
-              <h4><strong>O que é o Booya Shop?</strong></h4>
-              <br>
-              <span>
-                Aqui estará o texto explicativo da nossa app.
-              </span>
-              <br>
-            </div>
-            <div>
-              <button type="button" class="button-payment" id="fechar">
-                F E C H A R
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
+    <script src="inputTel/build/js/intlTelInput.js"></script>
+    <script src="inputTel/build/js/utils.js"></script>
+    <script src="phone.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
 </html>

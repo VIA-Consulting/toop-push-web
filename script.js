@@ -56,22 +56,27 @@ enviarButton.addEventListener("click", () => {
     }
   });
 
-  if (phoneNumber.value.length !== 0) {
+  if (inputInstance.isValidNumber()) {
     document.querySelector(".form-number").classList.add("disappear");
     document.querySelector(".spinner").classList.remove("disappear");
     document.querySelector("#error-telemovel").classList.add("disappear");
 
-    $("#fail-message").text("")
+    var selectedCountryData = inputInstance.getSelectedCountryData();
+    var phoneNumberInput = inputInstance.getNumber();
+    var countryCode = "+" + selectedCountryData.dialCode;
+    var number = phoneNumberInput.replace(countryCode, "").trim();
+
+    $("#fail-message").text("");
     $.ajax({
       type: "POST",
       url: "http://localhost:8090/portal-api/sendPush",
       data: JSON.stringify({
         data: {
           valor: parseFloat($("#total").text()),
-          ddd: parseInt($("#country").val()),
-          numero: phoneNumber.value,
+          ddd: parseInt(selectedCountryData.dialCode),
+          numero: number,
           merchant: comerciante,
-          orderId:$("#order-id").text()
+          orderId: $("#order-id").text(),
         },
         notificacao: {
           titulo: `Pedido ${$("#order-id").text()} - ${comerciante}`,
@@ -89,7 +94,7 @@ enviarButton.addEventListener("click", () => {
       .fail((error) => {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
-        $("#fail-message").text(error.responseText)
+        $("#fail-message").text(error.responseText);
         phoneNumber.value = "";
       });
   } else {
