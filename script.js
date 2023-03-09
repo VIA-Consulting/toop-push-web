@@ -1,5 +1,11 @@
-// import { inputInstance } from "./phone.js";
-// const inputInstance = require("./phone.js");
+const input = document.querySelector("#mobile_code");
+const inputInstance = intlTelInput(input, {
+  initialCountry: "pt",
+  nationalMode: true,
+  separateDialCode: true,
+  utilsScript: "inputTel/build/js/utils.js",
+  separateDialCode: true
+});
 const paymentButtons = document.querySelectorAll(".payment");
 const DEVICES = [
   {
@@ -62,10 +68,10 @@ enviarButton.addEventListener("click", () => {
     document.querySelector(".spinner").classList.remove("disappear");
     document.querySelector("#error-telemovel").classList.add("disappear");
 
-    var selectedCountryData = inputInstance.getSelectedCountryData();
-    var phoneNumberInput = inputInstance.getNumber();
-    var countryCode = "+" + selectedCountryData.dialCode;
-    var number = phoneNumberInput.replace(countryCode, "").trim();
+    const selectedCountryData = inputInstance.getSelectedCountryData();
+    const phoneNumberInput = inputInstance.getNumber();
+    const countryCode = "+" + selectedCountryData.dialCode;
+    const number = phoneNumberInput.replace(countryCode, "").trim();
 
     $("#fail-message").text("");
     $.ajax({
