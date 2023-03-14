@@ -84,7 +84,7 @@ enviarButton.addEventListener("click", () => {
           numero: number,
           merchant: comerciante,
           orderId: $("#order-id").text(),
-          pushId: crypto.randomUUID()
+          pushId: crypto.randomUUID(),
         },
         notificacao: {
           titulo: `Pedido ${$("#order-id").text()} - ${comerciante}`,
@@ -102,13 +102,11 @@ enviarButton.addEventListener("click", () => {
       .fail((error) => {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
-        console.log(error.responseText)
-        if(!error.responseText || error.responseText.length === 0|| error.responseText == undefined || error.responseText == null )
-        {
-          $("#fail-message").text("Houve um erro ao tentar realizar a operação, tente mais tarde");
+
+        if (!error.responseText || error.responseText.length === 0) {
+          $("#fail-message").text("Não foi possível completar o pagamento! Tente novamente mais tarde.");
         }
-        else
-        {
+        else {
           $("#fail-message").text(error.responseText);
 
         }
