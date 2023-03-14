@@ -102,13 +102,15 @@ enviarButton.addEventListener("click", () => {
       .fail((error) => {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
-        if(!error.responseText || error.responseText.length === 0 )
+        console.log(error.responseText)
+        if(!error.responseText || error.responseText.length === 0|| error.responseText == undefined || error.responseText == null )
         {
-          $("#fail-message").text(error.responseText);
+          $("#fail-message").text("Houve um erro ao tentar realizar a operação, tente mais tarde");
         }
         else
         {
-          $("#fail-message").text("Houve um erro ao tentar realizar a operação, tente mais tarde");
+          $("#fail-message").text(error.responseText);
+
         }
         phoneNumber.value = "";
       });
