@@ -84,6 +84,7 @@ enviarButton.addEventListener("click", () => {
           numero: number,
           merchant: comerciante,
           orderId: $("#order-id").text(),
+          pushId: crypto.randomUUID()
         },
         notificacao: {
           titulo: `Pedido ${$("#order-id").text()} - ${comerciante}`,
@@ -101,7 +102,14 @@ enviarButton.addEventListener("click", () => {
       .fail((error) => {
         document.querySelector(".spinner").classList.add("disappear");
         document.querySelector(".fail").classList.remove("disappear");
-        $("#fail-message").text(error.responseText);
+        if(!error.responseText || error.responseText.length === 0 )
+        {
+          $("#fail-message").text(error.responseText);
+        }
+        else
+        {
+          $("#fail-message").text("Houve um erro ao tentar realizar a operação, tente mais tarde");
+        }
         phoneNumber.value = "";
       });
   } else {
